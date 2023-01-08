@@ -5,13 +5,13 @@ import (
 	"propellerboard/util/identifier"
 )
 
-type Uuid5Generator struct{}
+type Uuid3Generator struct{}
 
-func NewUuid5Generator() Uuid5Generator {
-	return Uuid5Generator{}
+func NewUuid3Generator() identifier.Generater {
+	return Uuid3Generator{}
 }
 
-func (e *Uuid5Generator) GenerateID() (identifier.GeneratedID, error) {
+func (e *Uuid3Generator) GeneratedID() (identifier.GeneratedID, error) {
 	newUuid, err := uuid.NewRandom()
 	if err != nil {
 		return "", err
