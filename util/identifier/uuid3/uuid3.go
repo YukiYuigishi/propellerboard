@@ -8,10 +8,10 @@ import (
 type Uuid3Generator struct{}
 
 func NewUuid3Generator() identifier.Generater {
-	return Uuid3Generator{}
+	return &Uuid3Generator{}
 }
 
-func (e *Uuid3Generator) GeneratedID() (identifier.GeneratedID, error) {
+func (e *Uuid3Generator) GenerateID() (identifier.GeneratedID, error) {
 	newUuid, err := uuid.NewRandom()
 	if err != nil {
 		return "", err
